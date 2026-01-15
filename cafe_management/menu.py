@@ -5,7 +5,9 @@ class Menu:
             "Coffee": 2.50,
             "Tea": 2.00,
             "Sandwich": 5.00,
-            "Cake": 3.50
+            "Cake": 3.50,
+            "Espresso": 3.00,
+            "Latte": 3.50
         }
 
     def add_item(self, name, price):
