@@ -1,14 +1,22 @@
-class Order:
-    def __init__(self):
-        self.orders = []
+def take_order(menu):
+    order = {}
 
-    def create_order(self):
-        return []
+    print("---------------------------Cafe menu--------------------------")
 
-    def add_to_order(self, current_order, item, quantity, price):
-        current_order.append({
-            "item": item,
-            "quantity": quantity,
-            "price": price
-        })
-        print(f"[Order Info] Added {quantity} x {item} to order.")
+    for item, price in menu.items():
+        print(f"Item: {item}, price: {price}")
+
+    while True:
+        item = input("Enter your order (or Done to finish): ")
+        if item == "Done":
+            break
+
+        if item not in menu:
+            print("Item not in menu")
+
+        qty = int(input("Enter quantity: "))
+        order[item] = order.get(item, 0) + qty
+
+    print("Your order: ", order)
+
+    return order
