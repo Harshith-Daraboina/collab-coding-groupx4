@@ -11,4 +11,4 @@ class Order:
             "quantity": quantity,
             "price": price
         })
-        print(f"Added {quantity} x {item} to order.")
+        print(f"[Order Info] Added {quantity} x {item} to order.")
