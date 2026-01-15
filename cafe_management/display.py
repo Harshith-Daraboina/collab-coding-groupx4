@@ -1,11 +1,10 @@
-class Display:
-    def show_menu(self, menu_items):
-        print("\n--- MENU ---")
-        for item, price in menu_items.items():
-            print(f"{item}: ${price:.2f}")
-        print("------------")
+def show_menu(menu):
+    print("\n--- Cafe Menu ---")
+    for item, price in menu.items():
+        print(f"{item}: ₹{price}")
 
-    def show_bill(self, order, total):
-        # This functionality is partially covered in Billing, but we can separate it if strictly required.
-        # For now, let's keep it simple or delegate to this if needed.
-        pass
+def show_bill(order, total):
+    print("\n--- Bill Summary ---")
+    for item, qty in order.items():
+        print(f"{item} x {qty}")
+    print(f"Total Amount: ₹{total}")
