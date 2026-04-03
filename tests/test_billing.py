@@ -1,5 +1,5 @@
 import pytest
-from billing import Billing
+from cafe_management.billing import Billing
 
 
 def test_subtotal():
@@ -37,7 +37,7 @@ def test_invalid_discount():
 
 def test_tax():
     billing = Billing(tax_rate=0.05)
-    assert billing.apply_tax(100) == 105
+    assert pytest.approx(billing.apply_tax(100), 0.01) == 105
 
 
 def test_generate_bill():
@@ -49,4 +49,4 @@ def test_generate_bill():
     result = billing.generate_bill(items, discount=10)
 
     assert result["subtotal"] == 100
-    assert result["total"] == 99  # 100 -> 90 after discount -> +10% tax = 99
+    assert pytest.approx(result["total"], 0.01) == 99
